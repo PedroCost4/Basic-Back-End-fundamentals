@@ -46,7 +46,6 @@ const deleteUser = (idLogin,targetId) => {
         if (Object.values(user).includes(targetId)){
             bd.splice(bd.indexOf(user),1)      
         }
-
     })
 }
 }
@@ -63,5 +62,5 @@ console.log(bd)
 deleteSingleData(0, 1, "cpf")
 console.log(bd)
 
-deleteUser(0,2) 
+deleteUser(0,2)
 console.log(bd)
