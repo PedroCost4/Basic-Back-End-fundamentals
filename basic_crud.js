@@ -27,7 +27,7 @@ const update = (id, element, newelement) => {
     })
 }
 
-const del = (idLogin,targetId,data) => {
+const deleteSingleData = (idLogin,targetId,data) => {
     if (bd.some(user => user.id == idLogin)){
     bd
     .forEach(user => {
@@ -58,7 +58,7 @@ update(0, "Pedro", "Pedrito")
 update(1, "lucas@gmail.com", "lucas_js@gmail.com")
 console.log(bd)
 
-del(0, 1, "cpf")
+deleteSingleData(0, 1, "cpf")
 console.log(bd)
 
 deleteUser(0,1) 
