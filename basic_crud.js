@@ -52,6 +52,7 @@ const deleteUser = (idLogin,targetId) => {
 
 insert(0, "Pedro", "pedro@gmail.com", "423.456.789-12", true)
 insert(1,"Lucas", "lucas@gmail.com", "345.645.786-21", false)
+insert(2,"João", "joao@gmail.com", "987.654.321-43", false)
 console.log(bd)
 
 update(0, "Pedro", "Pedrito")
