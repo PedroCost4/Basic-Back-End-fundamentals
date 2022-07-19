@@ -1,12 +1,13 @@
 const bd = []
 
-const insert = (id ,name, email, cpf, admin) => {
+const insert = (id ,name,idade, email, cpf, admin) => {
     const user = {}
     user.id = id
     user.name = name
+    user.idade = idade
     user.email = email
     user.cpf = cpf
-    user.isadmin = admin
+    user.isAdmin = admin
     return bd.push(user)
 }
 
@@ -16,6 +17,9 @@ const update = (id, element, newelement) => {
             if (Object.values(user).includes(id)){
                 if (user.cpf == element){
                     user.cpf = newelement
+                }
+                else if (user.idade == element){
+                    user.idade = newelement
                 }
                 else if (user.name == element){
                     user.name = newelement
@@ -33,26 +37,28 @@ const deleteSingleData = (idLogin,targetId,data) => {
     .forEach(user => {
         if (Object.values(user).includes(targetId)){
             delete user[data]
-            
         }
     })
     }
 }
 
 const deleteUser = (idLogin,targetId) => {
-    if (bd.some(user => user.id == idLogin)){
     bd
     .forEach(user => {
-        if (Object.values(user).includes(targetId)){
-            bd.splice(bd.indexOf(user),1)      
+        if (user.id == idLogin && user.isAdmin == true){
+            bd.forEach(user => {
+                if (Object.values(user).includes(targetId)){
+                    bd.splice(bd.indexOf(user),1)      
+                }
+            })
         }
     })
 }
-}
 
-insert(0, "Pedro", "pedro@gmail.com", "423.456.789-12", true)
-insert(1,"Lucas", "lucas@gmail.com", "345.645.786-21", false)
-insert(2,"João", "joao@gmail.com", "987.654.321-43", false)
+
+insert(0, "Pedro", 65 , "pedro@gmail.com", "423.456.789-12", true)
+insert(1,"Lucas",54, "lucas@gmail.com", "345.645.786-21", false)
+insert(2,"João",32, "joao@gmail.com", "987.654.321-43", false)
 console.log(bd)
 
 update(0, "Pedro", "Pedrito")
@@ -62,5 +68,6 @@ console.log(bd)
 deleteSingleData(0, 1, "cpf")
 console.log(bd)
 
-deleteUser(0,2)
+deleteUser(0,1)
 console.log(bd)
+
