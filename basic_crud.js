@@ -11,8 +11,8 @@ const insert = (id ,name,idade, email, cpf, admin) => {
     return DataBase.push(user)
 }
 
-const searchUser = (userId,userCpf) => {
-    let filteredDataBase = DataBase.filter((user => user.id === userId || user.cpf === userCpf),[])
+const searchUser = (userData) => {
+    let filteredDataBase = DataBase.filter((user => user.id === userData || user.cpf === userData),[])
     return filteredDataBase
 }
 
@@ -86,6 +86,5 @@ console.log(DataBase)
 const filtered = FilterNoAndAdminUsers(true)
 console.log(filtered)
 
-
-const filtered2 = searchUser(null, "567.345.789-21")
+const filtered2 = searchUser(2)
 console.log(filtered2)
