@@ -16,6 +16,10 @@ const searchUser = (userData) => {
     return filteredDataBase
 }
 
+const searchUserwithTargetData = (userData,wantedData) => {
+    let filteredDataBase = DataBase.filter((user => user.id === userData || user.cpf === userData),[])
+    return filteredDataBase[0][wantedData]
+}
 
 const update = (id, element, newelement) => {
     DataBase
@@ -66,7 +70,6 @@ const FilterNoAndAdminUsers = (AdminCond) => {
     return filteredDataBase
 }
 
-
 insert(0, "Pedro", 65 , "pedro@gmail.com", "423.456.789-12", true)
 insert(1,"Lucas",54, "lucas@gmail.com", "345.645.786-21", false)
 insert(2,"João",32, "joao@gmail.com", "987.654.321-43", false)
@@ -88,3 +91,8 @@ console.log(filtered)
 
 const filtered2 = searchUser(2)
 console.log(filtered2)
+
+const filteredwithTarget = searchUserwithTargetData("567.345.789-21", "name")
+console.log(filteredwithTarget)
+
+
