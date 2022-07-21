@@ -29,6 +29,12 @@ const update = (id,data) => {
   DataBase[idx] = { ...DataBase[idx], ...data };
 };
 
+const updateElement = (id, data, newelement) => {
+  const idx = DataBase.findIndex((user) => user.id === id);
+  if (idx === -1) throw new Error('User not found');
+  DataBase[idx][data] = newelement;
+};
+
 const deleteSingleData = (idLogin,targetId,data) => {
     if (DataBase.some(user => user.id == idLogin)){
     DataBase
@@ -62,6 +68,10 @@ console.table(DataBase);
 
 update(0,{name:"Pedrito",cpf:"123.321.765-98",password:"sdrfgnjou567"});
 update(1, {email:"lucas_js@gmail.com"});
+console.table(DataBase);
+
+updateElement(2,"name","Josefao");
+updateElement(3,"age",12);
 console.table(DataBase);
 
 deleteSingleData(0, 1, "cpf");
