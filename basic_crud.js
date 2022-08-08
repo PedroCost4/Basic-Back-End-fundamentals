@@ -60,11 +60,15 @@ const FilterNoAndAdminDataBase = (AdminCond) => {
     return filteredDataBase;
 };
 
+const showAllUsers = (db) => {
+    console.table(db);
+}
+
 InsertUser( "Pedro", 65 , "pedro@gmail.com", "423.456.789-12", "-", true);
 InsertUser("Lucas",54, "lucas@gmail.com", "345.645.786-21","edrfgji09435", false);
 InsertUser("João",32, "joao@gmail.com", "987.654.321-43","ergfnjk8543" ,false);
 InsertUser( "Bruno",78,"bruno@gmail.com", "567.345.789-21","drfjiko76", true);
-console.table(DataBase);
+showAllUsers(DataBase);
 
 update(0,{name:"Pedrito",cpf:"123.321.765-98",password:"sdrfgnjou567"});
 update(1, {email:"lucas_js@gmail.com"});
