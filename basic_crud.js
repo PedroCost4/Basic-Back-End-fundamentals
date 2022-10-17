@@ -60,7 +60,7 @@ const FilterNoAndAdminDataBase = (AdminCond) => {
     return filteredDataBase;
 };
 
-const showAllUsers = (db) => {
+const showAllUsers = db => {
     console.table(db);
 }
 
@@ -72,11 +72,11 @@ showAllUsers(DataBase);
 
 update(0,{name:"Pedrito",cpf:"123.321.765-98",password:"sdrfgnjou567"});
 update(1, {email:"lucas_js@gmail.com"});
-console.table(DataBase);
+showAllUsers(DataBase);
 
 updateElement(2,"name","Josefao");
 updateElement(3,"age",12);
-console.table(DataBase);
+showAllUsers(DataBase);
 
 deleteSingleData(0, 1, "cpf");
 console.log(DataBase);
