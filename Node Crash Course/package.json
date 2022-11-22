@@ -1,16 +1,24 @@
 {
   "name": "learning-node",
   "version": "1.0.0",
-  "description": "",
+  "description": "learning node",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
+  "author": "Pedro Costa",
   "license": "ISC",
+  "keywords": [
+    "node",
+    "javascript",
+    "learning"
+  ],
   "dependencies": {
+    "cfonts": "^3.1.1",
     "core-js": "^3.25.5",
+    "ejs": "^3.1.8",
     "express": "^4.18.2",
-    "lodash": "^4.17.21"
+    "lodash": "^4.17.21",
+    "morgan": "^1.10.0"
   }
 }
